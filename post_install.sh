@@ -7,7 +7,7 @@ echo "Installing bazarr requirements"
 pip install -r /usr/local/bazarr/requirements.txt
 
 echo "Creating new user with name: ${user_name}"
-iocage exec "$1" "pw user add bazarr -c bazarr -u 399 -d /nonexistent -s /usr/bin/nologin"
+pw user add bazarr -c bazarr -u 399 -d /nonexistent -s /usr/bin/nologin
 chown -R ${user_name} /usr/local/bazarr
 
 echo "Start bazarr service"
