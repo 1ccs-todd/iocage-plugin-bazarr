@@ -2,7 +2,7 @@
 # This file contains the install script for bazarr
 
 #init jail
-initblueprint "$1"
+initplugin "$1"
 
 # Initialise defaults
 
@@ -14,4 +14,4 @@ createmount "$1" "${global_dataset_media}"/series /mnt/series
 iocage exec "$1" chown -R bazarr:bazarr /usr/local/share/bazarr /config
 iocage exec "$1" service bazarr start
 
-exitblueprint "$1"
+exitplugin "$1"
